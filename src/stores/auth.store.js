@@ -28,6 +28,22 @@ export const useAuthStore = defineStore({
                 body: null // or '{}' if backend requires a body
                 });
 
+                if (!response.ok) {
+                    // Invalid credentials or other server-side error
+                    // Prefer a clear message specifically for auth failure
+                    let message = 'Username or password is incorrect';
+                    try {
+                        // Attempt to read server-provided error message
+                        const errorBody = await response.json();
+                        if (errorBody && (errorBody.message || errorBody.error)) {
+                            message = errorBody.message || errorBody.error;
+                        }
+                    } catch (_) {
+                        // ignore JSON parse errors, keep default message
+                    }
+                    throw new Error(message);
+                }
+
                 const user = await response.json();
 
                 // update pinia state
@@ -40,7 +56,8 @@ export const useAuthStore = defineStore({
                 router.push(this.returnUrl || '/');
             } catch (error) {
                 const alertStore = useAlertStore();
-                alertStore.error(error);                
+                alertStore.error(error?.message || 'Login failed');
+                // Do not rethrow to prevent unhandled promise rejections in views
             }
         },
         logout() {
