@@ -24,8 +24,8 @@ src/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/mbouzas/owt-challenge-fronted.git
-cd owt-challenge-fronted
+git clone https://github.com/mbouzas/owt-challenge-vue.git
+cd owt-challenge-vue
 ```
 
 ### 2. Install dependencies
@@ -53,12 +53,12 @@ npm run dev
 From the project root directory run:
 
 ```bash
-docker build -t owt-challenge-frontend .
+docker build -t owt-challenge-vue .
 ```
 ### Run the Docker container
 
 ```bash
-docker run -d -p 3000:80 owt-challenge-frontend
+docker run -d -p 3000:80 owt-challenge-vue
 ```
 -p 3000:80 maps port 3000 on your host to port 80 in the container (Nginx default). Be sure 3000 is not already in use on your host.
 
