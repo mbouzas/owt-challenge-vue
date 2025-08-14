@@ -1,5 +1,5 @@
 
-This project is a simple registration built with **Vue 3**, **Pinia** for state management, and **VeeValidate** for form validation. It demonstrates boats management features such as listing boats, adding, editing, and deleting. Also authentication.
+This project is a simple login app built with **Vue 3**, **Pinia** for state management, and **VeeValidate** for form validation. It demonstrates boats management features such as listing boats, adding, editing, and deleting. Also authentication.
 
 ## Features
 
@@ -7,7 +7,7 @@ This project is a simple registration built with **Vue 3**, **Pinia** for state 
 - Pinia state management
 - VeeValidate + Yup for form validation
 - Boat CRUD: list, add, edit, delete
-- Authentication (login, register, logout)
+- Authentication (login, logout)
 
 ## Project Structure
 
@@ -17,7 +17,7 @@ src/
   components/       # Reusable components (e.g., Navbar)
   router/           # Vue Router configuration
   stores/           # Pinia stores
-  views/            # Page components (Login, Register, Boats, etc.)
+  views/            # Page components (Login, Boats, etc.)
 ```
 
 ## Getting Started
@@ -69,11 +69,10 @@ http://localhost:3000/
 - **Home page**: Displays the  Boat list. The user clicks on a boat item and gets a detail view over it.
 - **Add/Edit**: Click "Add" or "Edit" a boat to open the form.
 - **Delete**: Click the delete button to remove a boat.
-- **Login/Register**: Use the authentication forms to log in and manage Boats Console.
+- **Login**: Use the authentication forms to log in and manage Boats Console.
 
 ## Customization
 
 - Update the UI in `src/views/boats/List.vue` and `src/views/boats/AddEdit.vue`.
 - Modify routes in `src/router/index.js` and `src/router/boats.routes.js`.
 - Adjust state logic in `src/stores/`.
-# owt-challenge-vue
