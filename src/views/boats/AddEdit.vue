@@ -28,16 +28,16 @@ const boatSchema = Yup.object().shape({
     .required('Name is required'),
 
   description: Yup.string()
-    .notRequired(),
+    .nullable(),
 
   capacity: Yup.number()
     .positive('Capacity must be positive')
     .integer('Capacity must be an integer')
-    .notRequired(),
+    .required('Capacity is required'),
 
-  size: Yup.number()
+  size: Yup.number().positive('Size must be positive')
     .integer('Size must be an integer')
-    .notRequired(),
+    .required('Size is required'),
 
   type: Yup.string()
     .required('Type is required'),
